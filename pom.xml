@@ -22,7 +22,7 @@
     <version.zeebe>8.2.5</version.zeebe>
     <version.spring-boot-starter-camunda>8.2.1</version.spring-boot-starter-camunda>
     <version.zeebe-process-test-extension-testcontainer>8.2.2</version.zeebe-process-test-extension-testcontainer>
-    <version.camunda.platform>7.19.0</version.camunda.platform>
+    <version.camunda-bom>7.19.0</version.camunda-bom>
     <version.jsoup>1.16.1</version.jsoup>
     <version.spring-boot>2.7.12</version.spring-boot>
     <version.picocli>4.7.3</version.picocli>
@@ -31,6 +31,11 @@
     <version.opencsv>5.7.1</version.opencsv>
     <version.operate-client>8.1.8</version.operate-client>
     <version.camunda-bpm-assert>15.0.0</version.camunda-bpm-assert>
+    <version.scala-library>2.13.10</version.scala-library>
+    <version.feel-engine>1.15.3</version.feel-engine>
+    <version.protobuf>3.21.9</version.protobuf>
+    <version.guava>31.1-android</version.guava>
+    <version.error_prone_annotations>2.14.0</version.error_prone_annotations>
 
     <plugin.version.function-maven-plugin>0.10.1</plugin.version.function-maven-plugin>
     <plugin.version.maven-enforcer-plugin>3.3.0</plugin.version.maven-enforcer-plugin>
@@ -54,7 +59,7 @@
       <dependency>
         <groupId>org.camunda.bpm</groupId>
         <artifactId>camunda-bom</artifactId>
-        <version>${version.camunda.platform}</version>
+        <version>${version.camunda-bom}</version>
         <scope>import</scope>
         <type>pom</type>
       </dependency>
@@ -99,6 +104,36 @@
         <groupId>io.camunda</groupId>
         <artifactId>camunda-operate-client-java</artifactId>
         <version>${version.operate-client}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.camunda</groupId>
+        <artifactId>zeebe-client-java</artifactId>
+        <version>${version.zeebe}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.scala-lang</groupId>
+        <artifactId>scala-library</artifactId>
+        <version>${version.scala-library}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.camunda.feel</groupId>
+        <artifactId>feel-engine</artifactId>
+        <version>${version.feel-engine}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-java</artifactId>
+        <version>${version.protobuf}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>${version.guava}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.errorprone</groupId>
+        <artifactId>error_prone_annotations</artifactId>
+        <version>${version.error_prone_annotations}</version>
       </dependency>
       <dependency>
         <groupId>io.camunda.spring</groupId>
@@ -224,10 +259,9 @@
           <version>${plugin.version.maven-enforcer-plugin}</version>
           <configuration>
             <rules>
-              <!--
-                <dependencyConvergence />
-              -->
-              <requirePluginVersions />
+              <reactorModuleConvergence/>
+              <dependencyConvergence/>
+              <requirePluginVersions/>
             </rules>
           </configuration>
           <executions>
@@ -249,8 +283,8 @@
                   <include>*.md</include>
                   <include>.gitignore</include>
                 </includes>
-                <trimTrailingWhitespace />
-                <endWithNewline />
+                <trimTrailingWhitespace/>
+                <endWithNewline/>
                 <indent>
                   <spaces>true</spaces>
                   <spacesPerTab>2</spacesPerTab>
@@ -258,9 +292,9 @@
               </format>
             </formats>
             <java>
-              <googleJavaFormat />
+              <googleJavaFormat/>
             </java>
-            <pom />
+            <pom/>
           </configuration>
         </plugin>
         <plugin>
@@ -295,7 +329,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore />
+                    <ignore/>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
