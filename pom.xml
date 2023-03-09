@@ -52,6 +52,7 @@
     <plugin.version.maven-assembly-plugin>3.6.0</plugin.version.maven-assembly-plugin>
     <plugin.version.maven-release-plugin>3.0.0</plugin.version.maven-release-plugin>
     <plugin.version.frontend-maven-plugin>1.12.1</plugin.version.frontend-maven-plugin>
+    <version.okio>2.10.0</version.okio>
   </properties>
 
   <dependencyManagement>
@@ -134,6 +135,16 @@
         <groupId>com.google.errorprone</groupId>
         <artifactId>error_prone_annotations</artifactId>
         <version>${version.error_prone_annotations}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.squareup.okio</groupId>
+        <artifactId>okio</artifactId>
+        <version>${version.okio}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.camunda.community</groupId>
+        <artifactId>camunda-engine-rest-client-openapi-java</artifactId>
+        <version>${version.camunda-bom}</version>
       </dependency>
       <dependency>
         <groupId>io.camunda.spring</groupId>
