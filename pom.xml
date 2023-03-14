@@ -53,6 +53,7 @@
     <plugin.version.maven-release-plugin>3.0.0</plugin.version.maven-release-plugin>
     <plugin.version.frontend-maven-plugin>1.12.1</plugin.version.frontend-maven-plugin>
     <version.okio>2.10.0</version.okio>
+    <version.equalsverifier>3.14</version.equalsverifier>
   </properties>
 
   <dependencyManagement>
@@ -183,6 +184,11 @@
         <groupId>org.camunda.bpm.assert</groupId>
         <artifactId>camunda-bpm-assert</artifactId>
         <version>${version.camunda-bpm-assert}</version>
+      </dependency>
+      <dependency>
+        <groupId>nl.jqno.equalsverifier</groupId>
+        <artifactId>equalsverifier</artifactId>
+        <version>${version.equalsverifier}</version>
       </dependency>
       <dependency>
         <groupId>org.camunda.community.migration</groupId>
