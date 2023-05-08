@@ -73,6 +73,13 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>io.camunda</groupId>
+        <artifactId>zeebe-bom</artifactId>
+        <version>${version.zeebe}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>info.picocli</groupId>
         <artifactId>picocli</artifactId>
         <version>${version.picocli}</version>
@@ -94,23 +101,8 @@
       </dependency>
       <dependency>
         <groupId>io.camunda</groupId>
-        <artifactId>zeebe-bpmn-model</artifactId>
-        <version>${version.zeebe}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.camunda</groupId>
-        <artifactId>zeebe-protocol</artifactId>
-        <version>${version.zeebe}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.camunda</groupId>
         <artifactId>camunda-operate-client-java</artifactId>
         <version>${version.operate-client}</version>
-      </dependency>
-      <dependency>
-        <groupId>io.camunda</groupId>
-        <artifactId>zeebe-client-java</artifactId>
-        <version>${version.zeebe}</version>
       </dependency>
       <dependency>
         <groupId>org.scala-lang</groupId>
@@ -154,8 +146,8 @@
         <scope>test</scope>
       </dependency>
       <dependency>
-        <groupId>io.camunda</groupId>
-        <artifactId>spring-zeebe-test</artifactId>
+        <groupId>io.camunda.spring</groupId>
+        <artifactId>spring-boot-starter-camunda-test</artifactId>
         <version>${version.spring-zeebe-starter}</version>
         <scope>test</scope>
       </dependency>
