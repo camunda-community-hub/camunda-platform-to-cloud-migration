@@ -33,7 +33,7 @@
     <version.camunda-bpm-assert>15.0.0</version.camunda-bpm-assert>
     <version.scala-library>2.13.10</version.scala-library>
     <version.feel-engine>1.15.3</version.feel-engine>
-    <version.protobuf>3.21.9</version.protobuf>
+    <version.protobuf>3.22.3</version.protobuf>
     <version.guava>31.1-android</version.guava>
     <version.error_prone_annotations>2.14.0</version.error_prone_annotations>
 
